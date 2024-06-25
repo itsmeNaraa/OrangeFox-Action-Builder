@@ -20,7 +20,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/cd-Crypton/custom_recovery_tree_realme_nashc'
+        default: 'https://github.com/miholi-devs/device_xiaomi_miholi-twrp'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
@@ -28,15 +28,15 @@ on:
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
-        default: 'device/realme/nashc'
+        default: 'device/xiaomi/miholi'
       DEVICE_NAME:
         description: 'Specify your Device Codename'
         required: true
-        default: 'nashc'
+        default: 'miholi'
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
-        default: 'recovery'
+        default: 'boot'
         type: choice
         options:
         - boot
