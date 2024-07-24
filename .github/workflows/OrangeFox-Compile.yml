@@ -20,7 +20,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/miholi-devs/device_xiaomi_miholi-twrp'
+        default: 'https://github.com/SingkoLab/device_xiaomi_moonstone-twrp'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
@@ -28,11 +28,11 @@ on:
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
-        default: 'device/xiaomi/miholi'
+        default: 'device/xiaomi/moonstone'
       DEVICE_NAME:
         description: 'Specify your Device Codename'
         required: true
-        default: 'miholi'
+        default: 'moonstone'
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
