@@ -20,7 +20,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://${{ secrets.GITHUB_TOKEN }}@github.com/miholi-devs/device_xiaomi_veux-twrp'
+        default: 'https://github.com/miholi-devs/device_xiaomi_veux-twrp'
       KERNEL_SOURCE:
         description: 'Device Kernel Source'
         required: true
