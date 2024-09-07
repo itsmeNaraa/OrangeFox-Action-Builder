@@ -24,7 +24,7 @@ on:
       KERNEL_SOURCE:
         description: 'Device Kernel Source'
         required: true
-        default: 'https://https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/SingkoLab/kernel_xiaomi_batu'
+        default: 'https://https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/SingkoLab/kernel_xiaomi_batu'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
