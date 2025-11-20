@@ -74,12 +74,6 @@ jobs:
       uses: hendrikmuhs/ccache-action@v1.2
       with:
         max-size: "10G"
-
-    - name: Print htop first
-      run : |
-        sudo apt install htop neofetch -y
-        htop
-        neofetch
       
     - name: Set-up Manifest
       if: github.event.inputs.MANIFEST_BRANCH == '11.0' || github.event.inputs.MANIFEST_BRANCH == '12.1'
