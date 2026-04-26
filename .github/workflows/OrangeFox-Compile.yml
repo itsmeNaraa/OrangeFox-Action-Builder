@@ -12,27 +12,28 @@ on:
       MANIFEST_BRANCH:
         description: 'OrangeFox Manifest Branch'
         required: true
-        default: '12.1'
+        default: '14.1'
         type: choice
         options:
         - 12.1
         - 11.0
+        - 14.1
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/miholi-devs/device_xiaomi_miholi-twrp'
+        default: 'https://github.com/skglab-dev/device_xiaomi_stone-recovery_6.1'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
-        default: 'android-12.1'
+        default: 'stone-port'
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
-        default: 'device/xiaomi/miholi'
+        default: 'device/xiaomi/stone'
       DEVICE_NAME:
         description: 'Specify your Device Codename'
         required: true
-        default: 'miholi'
+        default: 'stone'
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
@@ -76,7 +77,7 @@ jobs:
         max-size: "10G"
       
     - name: Set-up Manifest
-      if: github.event.inputs.MANIFEST_BRANCH == '11.0' || github.event.inputs.MANIFEST_BRANCH == '12.1'
+      if: github.event.inputs.MANIFEST_BRANCH == '11.0' || github.event.inputs.MANIFEST_BRANCH == '12.1' || github.event.inputs.MANIFEST_BRANCH == '14.1'
       run: |
         mkdir -p ${GITHUB_WORKSPACE}/OrangeFox
         cd ${GITHUB_WORKSPACE}/OrangeFox
@@ -103,7 +104,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         set -e
-        lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
+        lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-ap2a-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
 
     - name: Set Release Properties
       run: |
